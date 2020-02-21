@@ -1,5 +1,6 @@
 const discord = require('discord.js');
 const firebase = require('firebase');
+const env = require('dotenv').config();
 
 firebase.initializeApp({
     apiKey: "AIzaSyACX60OfX5FE3T6Kr1kBw_lZqqILu8DYmM",
@@ -22,7 +23,7 @@ doc.onSnapshot(function(doc) {
     bot.user.setPresence({
         game: {
             name: doc.data().name,
-            type: doc.data().type
+            type: doc.data().type,
         }
     })
 })
@@ -50,6 +51,8 @@ bot.on('guildMemberAdd', join => {
         console.log(err);
     }
 });
+
+bot.login(process.env.TK);
 
 bot.on('ready', () => {
     console.log('ready');
