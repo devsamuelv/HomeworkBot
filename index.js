@@ -24,8 +24,8 @@ const logo = 'https://cdn.discordapp.com/app-icons/680520732614459419/8c76b1f456
 doc.onSnapshot(function(doc) {
     bot.user.setPresence({
         game: {
-            name: doc.data().name,
-            type: doc.data().type,
+            name: doc.data().statName,
+            type: doc.data().statType,
         }
     })
 })
