@@ -43,7 +43,7 @@ bot.on('message', message => {
                     userGuild.ban().then(() => {
                         const banEmbed = new discord.RichEmbed({
                             title: `✅ ${user.username} Got The Boot ✅`,
-                            hexColor: '#E8532E',
+                            color: 3447003,
                             author: {
                                 name: '🔰 Homework Bot 🔰',
                                 icon_url: logo,
@@ -58,7 +58,7 @@ bot.on('message', message => {
                     }).catch(err => {
                         const banEmbed1 = new discord.RichEmbed({
                             title: `🚧 Error 🚧`,
-                            hexColor: '#E8532E',
+                            color: 3447003,
                             author: {
                                 name: '🔰 Homework Bot 🔰',
                                 icon_url: logo,
@@ -74,7 +74,7 @@ bot.on('message', message => {
                 } else {
                     const banEmbed2 = new discord.RichEmbed({
                         title: `❌ Error ❌`,
-                        hexColor: '#E8532E',
+                        color: 3447003,
                         author: {
                             name: '🔰 Homework Bot 🔰',
                             icon_url: logo,
@@ -93,7 +93,7 @@ bot.on('message', message => {
         case 'banTest':
             const banEmbedt = new discord.RichEmbed({
                 title: `✅ testUser Got The Boot ✅`,
-                hexColor: '#E8532E',
+                color: 3447003,
                 author: {
                     name: '🔰 Homework Bot 🔰',
                     icon_url: logo,
@@ -108,7 +108,7 @@ bot.on('message', message => {
 
             const banEmbedte = new discord.RichEmbed({
                 title: `🚧 Error 🚧`,
-                hexColor: '#E8532E',
+                color: 3447003,
                 author: {
                     name: '🔰 Homework Bot 🔰',
                     icon_url: logo,
