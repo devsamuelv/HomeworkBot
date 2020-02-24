@@ -1,16 +1,16 @@
 {
-  "name": "homeworkbot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "dev samuel",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^11.5.1",
-    "dotenv": "^8.2.0",
-    "firebase": "^7.9.1"
-  }
+    "name": "homeworkbot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "homeworkBot.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "dev samuel",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^11.5.1",
+        "dotenv": "^8.2.0",
+        "firebase": "^7.9.1"
+    }
 }

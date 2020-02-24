@@ -18,6 +18,8 @@ var firestore = firebase.firestore();
 
 var doc = firestore.collection('homeworkbotConfig').doc('BWC1c8XNAQQPLmt8mlRu');
 
+var slowedUses = firestore.collection('slowedUsers');
+
 var bot = new discord.Client();
 const logo = 'https://cdn.discordapp.com/app-icons/680520732614459419/8c76b1f456a1f5d5185175f90ca3480b.png';
 
@@ -28,6 +30,20 @@ doc.onSnapshot(function(doc) {
             type: doc.data().statType,
         }
     })
+})
+
+const featureNotFound = new discord.RichEmbed({
+    title: `🚧 Feature Not Found 🚧`,
+    color: 3447003,
+    author: {
+        name: '🔰 Homework Bot 🔰',
+        icon_url: logo,
+    },
+    description: `🚧 Feature Not Implmented 🚧`,
+    footer: {
+        text: `Date Sent ${new Date}`,
+        icon_url: logo
+    }
 })
 
 bot.on('message', message => {
@@ -123,10 +139,33 @@ bot.on('message', message => {
             break;
 
         case 'slow':
+            message.channel.send(featureNotFound);
+            // const mention = message.mentions.users.first();
+            // const sloweduser = message.guild.members.get(mention);
+
+            // slowedUses.add({
+            //     name: user.username,
+            //     time: new Date,
+            // }).then(a, () => {
+            //     const banEmbed = new discord.RichEmbed({
+            //         title: `❄ ${sloweduser.username} Got The Freeze ❄`,
+            //         color: 3447003,
+            //         author: {
+            //             name: '🔰 Homework Bot 🔰',
+            //             icon_url: logo,
+            //         },
+            //         description: `❄ ${message.author.username} freezed ${sloweduser.username} ❄`,
+            //         footer: {
+            //             text: ` Date Sent ${new Date} `,
+            //             icon_url: logo
+            //         }
+            //     })
+            // })
             break;
     }
 });
 
+// when a user is added
 bot.on('guildMemberAdd', join => {
     try {
         const channel = join.guild.channels.find(channel => channel.name === "classes-list");
